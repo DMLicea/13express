@@ -4,6 +4,15 @@ var path = require("path");
 
 var app = express();
 
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(bodyParser.text());
+
+
 var PORT = process.env.PORT;
 
 app.use(express.urlencoded({ extended: true }));
